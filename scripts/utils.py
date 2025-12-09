@@ -14,6 +14,46 @@ from spatialdata.transformations import Identity, Scale
 from shapely.geometry import Polygon
 
 
+def prepare_data():
+    # Loading the zarr files
+    visium_hd_zarr_paths = {
+        "Cancer_P1": "./Colon_Cancer_P1",
+        "Cancer_P2": "./Colon_Cancer_P2",
+        "Normal_P3": "./Colon_Normal_P3",
+        "Normal_P5": "./Colon_Normal_P5"
+    }
+
+
+    # Loading samples into a dictionary
+    sdatas = []
+    for key, path in visium_hd_zarr_paths.items():
+        sdata = spd.read_zarr(path)
+
+        for table in sdata.tables.values():
+            table.var_names_make_unique()
+            table.obs["sample"] = key
+
+        sdatas.append(sdata)
+        del sdata, table
+        gc.collect()
+    # Concatenate
+    concatenated_sdata = spd.concatenate(sdatas, concatenate_tables=True)
+
+    # Save with default file name
+    concatenated_sdata.write("concatenated_sdata", overwrite=True)
+
+    del concatenated_sdata,sdatas,visium_hd_zarr_paths, key, path
+    gc.collect()
+
+    concatenated_sdata = spd.read_zarr("concatenated_sdata")
+
+    print("---------------------------------")
+    print(concatenated_sdata)
+
+    return concatenated_sdata
+
+
+
 def create_zarr(count_matrix_path,
                 image_path,
                 scale_factors_path,
