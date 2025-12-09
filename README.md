@@ -58,3 +58,8 @@ Available profiles:
 - `singularity` - with Singularity/Apptainer
 - `slurm` - with slurm on HPC
 
+### For usage help run
+
+```bash
+nextflow run main.nf --help
+```
