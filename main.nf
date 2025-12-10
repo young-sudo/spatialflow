@@ -13,7 +13,7 @@ if ( params.help ) {
 
 process CREATE_ZARR {
   output:
-    val "concatenated_sdata", emit zarr_ch
+    val "concatenated_sdata", emit: zarr_ch
 
   script:
     """
@@ -26,7 +26,7 @@ process QC_DATA {
     val zarr_ch
 
   output:
-    val "preprocessed_adata.h5ad", emit preprocessed_ch
+    val "preprocessed_adata.h5ad", emit: preprocessed_ch
 
   script:
     """
