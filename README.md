@@ -24,7 +24,7 @@ The datasets used in this Analysis Guide are publicly available from 10x Genomic
 <p style="margin-top: 10px; margin-bottom: 30px;" align="center">
 <img src="https://raw.githubusercontent.com/young-sudo/spatialflow/main/img/samples.png" alt="10x" width=300>
 <br>
-<small>Sample tissues
+<small>Sample tissues</small>
 </p>
 
 The specific datasets used here are:
