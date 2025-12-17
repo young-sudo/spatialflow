@@ -82,7 +82,7 @@ Available profiles:
 nextflow run main.nf --help
 ```
 
-# Methods
+# Methods and Results
 
 In order to download the same dataset as the one used in this analysis run:
 
