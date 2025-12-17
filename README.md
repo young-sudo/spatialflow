@@ -15,7 +15,7 @@
 <img src="https://raw.githubusercontent.com/young-sudo/spatialflow/main/img/10x_logo.png" alt="10x" width=100>
 </p>
 
-This project implements the <b>Visium HD Multi-sample Analysis</b> workflow from 10x Genomics, based on their [Tutorial](https://www.10xgenomics.com/analysis-guides/tutorial-visium-hd-multi-sample-python-colab) and [Colab Notebook](https://colab.research.google.com/github/10XGenomics/analysis_guides/blob/main/Visium_HD_multi_sample_comparison_python.ipynb#scrollTo=2WU0zKjjCKEI), transformed into a reproducible workflow that can be executed across different environments.
+This project implements the <b>Visium HD Multi-sample Analysis</b> workflow from 10x Genomics, based on their [Guide](https://www.10xgenomics.com/analysis-guides/tutorial-visium-hd-multi-sample-python-colab) and [Colab Notebook](https://colab.research.google.com/github/10XGenomics/analysis_guides/blob/main/Visium_HD_multi_sample_comparison_python.ipynb#scrollTo=2WU0zKjjCKEI), transformed into a <b>reproducible workflow</b> that can be executed across different environments.
 
 The datasets used in this Analysis Guide are publicly available from 10x Genomics:
 
@@ -33,7 +33,7 @@ The specific datasets used here are:
 * **Visium HD, Sample P3 Normal Adjacent Tissue (NAT)**: Normal adjacent human colon tissue (Patient 3).
 * **Visium HD, Sample P5 NAT**: Normal adjacent human colon tissue (Patient 5).
 
-If you are working with your own data, for each dataset, the `outs` directory will contain the cell segmentation based binned output and spatial output data. For a more detailed description of Visium HD's outputs, see the documentation on our support [site](https://www.10xgenomics.com/support/software/space-ranger/latest/analysis/outputs/output-overview).
+If you are working with your own data, for each dataset, the `outs` directory will contain the cell segmentation based binned output and spatial output data. For a more detailed description of Visium HD's outputs, see the documentation on 10x Genomics [website](https://www.10xgenomics.com/support/software/space-ranger/latest/analysis/outputs/output-overview).
 
 The data was originally processed using `spaceranger count` v3.0.0. However, to generate the Space Ranger cell segmentation outputs used in this project, the public colon cancer and normal adjacent tissue datasets were reprocessed using `spaceranger count` v4.0.1.
 
