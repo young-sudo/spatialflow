@@ -125,7 +125,7 @@ When running `Scanpy`'s `neighbors` function, the distance metric selected will 
 
 A metric that emphasizes magnitude (like Euclidean) might connect cells based on overall transcriptional activity, while a metric emphasizing shape (like Cosine) might connect cells with similar gene expression patterns, even if their total RNA content differs.
 
-For this analysis, we used `Scanpy`'s correlation distance metric, the clustering resolution (RES) is set to 0.8, and the number of neighbors is set to 15. These parameters will likely need to be fine-tuned for new analyses: a smaller resolution generally leads to fewer clusters, while increasing the number of neighbors will have a similar effect.
+For this analysis, `Scanpy`'s correlation distance metric is used, and the clustering resolution (RES) is set to 0.8, and the number of neighbors is set to 15. These parameters will likely need to be fine-tuned for new analyses: a smaller resolution generally leads to fewer clusters, while increasing the number of neighbors will have a similar effect.
 
 <p style="margin-top: 10px; margin-bottom: 10px;" align="center">
 <img src="https://raw.githubusercontent.com/young-sudo/spatialflow/main/img/umap_by_clusters.png" alt="10x" width=250>
@@ -141,7 +141,7 @@ For this analysis, we used `Scanpy`'s correlation distance metric, the clusterin
 </p>
 
 
-## Cell annotations
+## Spatial cell annotations
 
 <p style="margin-top: 15px; margin-bottom: 15px;" align="center">
 <img src="https://raw.githubusercontent.com/young-sudo/spatialflow/main/img/sample1_clust.png" alt="10x" width=200>
@@ -173,9 +173,9 @@ For this analysis, we used `Scanpy`'s correlation distance metric, the clusterin
 <small>Canonical marker genes in clusters</small>
 </p>
 
-Using the canonical markers, we observe that Cluster 3 expresses smooth muscle markers.
+Using the canonical markers, it can be observed that Cluster 3 expresses smooth muscle markers.
 
-Cluster annotation can often be challenging when only canonical markers are used. To assist in this process, we can use `Scanpy`’s `rank_genes_groups` function to identify marker genes for each cluster. The results can be ranked by marker score or by the log fold-change. The top-ranked genes within each cluster can then be further analyzed using tools like [Enrichr](https://maayanlab.cloud/Enrichr/) to infer the cluster's potential cell type.
+Cluster annotation can often be challenging when only canonical markers are used. To assist in this process, `Scanpy`’s `rank_genes_groups` function can be used to identify marker genes for each cluster. The results can be ranked by marker score or by the log fold-change. The top-ranked genes within each cluster can then be further analyzed using tools like [Enrichr](https://maayanlab.cloud/Enrichr/) to infer the cluster's potential cell type.
 
 <p style="margin-top: 15px; margin-bottom: 15px;" align="center">
 <img src="https://raw.githubusercontent.com/young-sudo/spatialflow/main/img/marker_genes_ranked.png" alt="10x" width=700>
@@ -218,7 +218,7 @@ We can now visualize the spatial expression of these genes.
 <small>Plots for COL1A1's spatial gene expression in samples</small>
 </p>
 
-We observe that `COL1A1` is expressed by fibroblasts situated closer to the tumor in the `Cancer` samples. Though beyond the scope of this guide, to delve deeper into the specific biology of these fibroblasts, the next step would involve subsetting the fibroblast-containing cluster from the overall dataset. This isolated subset can then be re-clustered to further investigate differences and heterogeneity within the fibroblast populations.
+`COL1A1` is expressed by fibroblasts situated closer to the tumor in the `Cancer` samples. To delve deeper into the specific biology of these fibroblasts, the next step would involve subsetting the fibroblast-containing cluster from the overall dataset. This isolated subset can then be re-clustered to further investigate differences and heterogeneity within the fibroblast populations.
 
 # References
 
